@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.6.1-2
+
+- Add selected-range total traffic and average daily total for days with records below the daily traffic chart.
+- Include the traffic chart module in the OpenWrt package manifest.
+
 ## 1.6.1 - 2026-10-02
 
 - Retain the last valid serving-band and modem-temperature readings when collection fails; refresh on successful readings.

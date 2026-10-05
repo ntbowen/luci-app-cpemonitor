@@ -5,7 +5,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-cpemonitor
 PKG_VERSION:=1.6.1
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 PKG_MAINTAINER:=xiaokeikei
 PKG_LICENSE:=GPL-2.0-only
 PKG_LICENSE_FILES:=LICENSE
@@ -58,6 +58,7 @@ define Package/luci-app-cpemonitor/install
 	$(INSTALL_DATA) ./root/www/luci-static/resources/view/cpemonitor/settings.js $(1)/www/luci-static/resources/view/cpemonitor/settings.js
 	$(INSTALL_DIR) $(1)/www/luci-static/resources/cpemonitor
 	$(INSTALL_DATA) ./root/www/luci-static/resources/cpemonitor/bands.js $(1)/www/luci-static/resources/cpemonitor/bands.js
+	$(INSTALL_DATA) ./root/www/luci-static/resources/cpemonitor/traffic.js $(1)/www/luci-static/resources/cpemonitor/traffic.js
 endef
 
 define Package/luci-app-cpemonitor/postinst

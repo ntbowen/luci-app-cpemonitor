@@ -8,6 +8,8 @@ assert.equal(api.monthStart(new Date(2024,2,31)),'2024-02-29');
 const rows=[['2026-10-02',20,10,30],['2026-09-30',10,5,15],['2026-10-01',15,7,22]];
 assert.deepEqual(api.select(rows,'2026-10-01','2026-10-02').map(r=>r[0]),['2026-10-01','2026-10-02']);
 assert.equal(rows[0][0],'2026-10-02');
+assert.deepEqual(api.summarize(rows),{total:67,days:3,average:67/3});
+assert.deepEqual(api.summarize([['2026-10-01',0,0,0]]),{total:0,days:1,average:0});
 const chart=api.create(rows),inputs=nodes.filter(n=>n.type==='date'),query=nodes.find(n=>n.tag==='button'&&n.children==='查询');
 inputs[0].value='2026-09-30';inputs[1].value='2026-10-02';query.click();
 assert(labels.includes('2026-09-30')&&labels.includes('2026-10-02')&&labels.includes('流量（GB）'));
